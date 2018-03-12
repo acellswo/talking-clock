@@ -7,7 +7,6 @@ class TestTimeConversionOutputs(unittest.TestCase):
 		input = "01:13"
 		expectedOutput = "It's one thirteen am"
 		
-		# TODO: make call to the actual obejct we're testing
 		actualOutput = ConvertTimeToSpoken.convert(input);
 		
 		self.assertEqual(expectedOutput, actualOutput)
@@ -16,7 +15,6 @@ class TestTimeConversionOutputs(unittest.TestCase):
 		input = "13:45"
 		expectedOutput = "It's one forty five pm"
 		
-		# TODO
 		actualOutput = ConvertTimeToSpoken.convert(input);
 		self.assertEqual(expectedOutput, actualOutput)
 
@@ -27,7 +25,23 @@ class TestTimeConversionOutputs(unittest.TestCase):
 		self.assertEqual(len(inputs), len(expectedOutput))
 		
 		for i in range(0, len(inputs)):
-			#TODO: convert
 			actualOutput = ConvertTimeToSpoken.convert(inputs[i]);
 			self.assertEqual(expectedOutput[i], actualOutput)
 			
+	def test_invalid_input(self):
+		input = ""
+		expectedOutput = ""
+		assert_expected(self, input, expectedOutput)
+		
+		input = "asfasdgasggggggg"
+		assert_expected(self, input, expectedOutput)
+		
+		input = "1:23"
+		assert_expected(self, input, expectedOutput)
+		
+		input = "12/34"
+		assert_expected(self, input, expectedOutput)
+		
+def assert_expected(self, input, expectedOutput):
+	actualoutput = ConvertTimeToSpoken.convert(input)
+	return self.assertEqual(expectedOutput, actualoutput)
