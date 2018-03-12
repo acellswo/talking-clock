@@ -32,6 +32,7 @@ class TestTimeConversionOutputs(unittest.TestCase):
 		expectedOutput = "Invalid input"
 		
 		input = ""
+		is_valid_time(input)
 		assert_expected(self, input, expectedOutput)
 		
 		input = "asfasdgasggggggg"
