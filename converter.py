@@ -3,7 +3,7 @@ class ConvertTimeToSpoken():
 	@staticmethod
 	def convert(time):
 		if not(is_valid_time(time)):
-			return "";
+			return "Invalid input";
 		
 		return "It's one thirteen am";
 	

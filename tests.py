@@ -29,8 +29,9 @@ class TestTimeConversionOutputs(unittest.TestCase):
 			self.assertEqual(expectedOutput[i], actualOutput)
 			
 	def test_invalid_input(self):
+		expectedOutput = "Invalid input"
+		
 		input = ""
-		expectedOutput = ""
 		assert_expected(self, input, expectedOutput)
 		
 		input = "asfasdgasggggggg"
