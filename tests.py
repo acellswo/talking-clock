@@ -17,6 +17,13 @@ class TestTimeConversionOutputs(unittest.TestCase):
 		
 		actualOutput = ConvertTimeToSpoken.convert(input);
 		self.assertEqual(expectedOutput, actualOutput)
+		
+	def test_twelve_pm_time_test(self) :
+		input = "12:45"
+		expectedOutput = "It's twelve forty five pm"
+		
+		actualOutput = ConvertTimeToSpoken.convert(input);
+		self.assertEqual(expectedOutput, actualOutput)
 
 	def test_reddit_tests(self):
 		inputs = ["00:00", "01:30", "12:05", "14:01", "20:29", "21:00"]
@@ -44,6 +51,9 @@ class TestTimeConversionOutputs(unittest.TestCase):
 		assert_expected(self, input, expectedOutput)
 		
 		input = "12/34"
+		assert_expected(self, input, expectedOutput)
+		
+		input = "99:99"
 		assert_expected(self, input, expectedOutput)
 		
 def assert_expected(self, input, expectedOutput):
